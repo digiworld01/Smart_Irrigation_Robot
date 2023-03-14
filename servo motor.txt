@@ -1,0 +1,29 @@
+if (distance>=15)
+ {
+ 
+   Forward();
+   delay(100);
+ }
+ else if(distance<15)
+
+{
+  Stop();
+  delay(70);
+  
+  digitalWrite(trigPin1, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin1, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin1, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin1, LOW);
+  duration1 = pulseIn(echoPin1, HIGH);
+  distance1= duration1*0.034/2;
+
+   if(distance1>=6)
+  {
+
+   servoF();
+   delay(100);
+   }
+}

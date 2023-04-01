@@ -49,7 +49,7 @@ First, you have to make to install these libraries in arduino IDE
   #include <AFMotor.h>
  #include<Servo.h> 
 ```
-We haave to define the triggered pin and echo pic for ultrasonic sensor 1 and ultrasonic sensor 2
+We have to define the triggered pin and echo pin for ultrasonic sensor 1 and ultrasonic sensor 2
 triggered pin> is used to trigger the ultrasonic sound pulses. Echo pin produces a pulse when the reflected signal is received. 
 echo pin>Echo pin is an ****Output pin****. This pin goes high for a period of time which will be equal to the time taken for the US wave to return back to the sensor
 ```bash

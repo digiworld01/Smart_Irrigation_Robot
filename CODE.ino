@@ -1,7 +1,4 @@
 
-//   ********CODE BY KHURAFATI BABA (SARTHAK MISHRA)**********
-//   ********CODE BY KHURAFATI BABA (SARTHAK MISHRA)**********
-
 
 
 #include <AFMotor.h>                          //For adding the library of shield

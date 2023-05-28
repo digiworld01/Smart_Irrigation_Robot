@@ -15,7 +15,7 @@ This project is all about the automatic irrigation system, This robot will start
 
 
 ## INTRODUCTION
-Goal of plant watering robot was to follow a line to a potted plant, actuate a sensor into the dirt to check the moisture level of the dirt, water the plant if needed, and continue on to the next plant when the moisture threshold is reached.This robot will start moving and then stop whenever it will find any plant then it starts watering according to their need. Once the robot reaches the plants, a bump sensor would be triggered to cause actuation of a servo motor with a moisture sensor on it
+Goal of plant watering robot was to follow a line to a potted plant, actuate a sensor into the soil to check the moisture level of the soil, water the plant if needed, and continue on to the next plant when the moisture threshold is reached.This robot will start moving and then stop whenever it will find any plant then it starts watering according to their need. Once the robot reaches the plants, a bump sensor would be triggered to cause actuation of a servo motor with a moisture sensor on it
 
 ## Circuit Diagram
 The circuit diagram of the automatic plant watering system is shown in Fig. The circuit comprises an Arduino UNO board, a soil moisture sensor, a servo motor, DC water pump, and an L293D (IC1) motor driver IC,ultrasonic sensor,moiture sensor, li on battery,TP4056 charging module, 100RPM geared motor,wheels.
@@ -27,7 +27,7 @@ The circuit diagram of the automatic plant watering system is shown in Fig. The 
 To reproduce this project, you'll need some tools, some material, and the code from this project
 
 ## Software Setup 
-The program is written in Arduino programming language. The code is well-commented and easy to understand. Compile the irrigation robot.ino code and upload it to the microcontroller, using Arduino IDE version 1.
+The program is written in Arduino IDE in c++ programming language. The code is well-commented and easy to understand. Compile the irrigation robot.ino code and upload it to the microcontroller, using Arduino IDE version 1.
 
 Once the arduino is loaded with the program it's time to wire it all up. Follow the diagram and wire everything up accordingly. Do not plug the arduino in to power at this point. Make sure everything is situated before letting it loose on your plants. You will need to attach a hose to the pump which will deliver water to your plants. I used a fish air hose to do this.
 
@@ -42,7 +42,7 @@ The program in the Arduino reads the moisture value from the sensor every 20 sec
 ## Code
 Upload the attached sketch to your arduino. Once the arduino is loaded with the program it's time to wire it all up.
 Follow the diagram and wire everything up accordingly.
-Do not plug the arduino in to power at this point.
+Do not plug the arduino in to power at this point(important point)
 
 First, you have to make to install these libraries in arduino IDE
 ```bash
@@ -152,4 +152,5 @@ The water pipe is connected to the servo motor which rotates according to the re
 Place the flower plants where the pipe from the servo motor can easily reach them. When the moisture level dips below 600, the servo  rotates at an angle of 70 degrees. That is after the servo motor horn moves 70 degrees toward the first pot, the motor pump will be on for five seconds and then stop automatically. Then, the servo returns to its original position. Similarly, if you are using a second sensor, the servo motor horn will move to 145 degrees to the second biggest pot, and the motor pump will be on for eight seconds and then stop automatically. The servo returns to its original position.
 
 ## Manual
+This user manual contain a detailed guide about the project with help user to setup the whole project very easily. Here is the file of user manual
 [user manual.docx](https://github.com/digiworld01/smart-irrigation-robot/files/10879383/user.manual.docx)

@@ -1,37 +1,40 @@
-#include <Servo.h>                             //For adding the library for servo motor
+#include<Servo.h>                             //For adding the library of servo motor
+Servo m1;                                     //Variable of servo motor 1
+Servo m2;                                     //variable of servo motor 2
+int pos;  
 
-Servo m1;                                     //Variable for servo motor 1
-Servo m2;                                     //Variable for servo motor 2
+void servoF()
+{
+  Serial.println("servo forward is fine");
+  delay(100);
+  
+  for (pos = 0; pos <= 120; pos += 1)
+  {
+    digitalWrite(trigPin1, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin1, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin1, LOW);
+    duration1 = pulseIn(echoPin1, HIGH);
+    distance1 = duration1 * 0.034 / 2;
 
-int pos;                                      //Variable that defines the position of the servos
-
-void setup() {
-  m1.attach(10);                             //Define the attached pin for servo motor 1
-  m2.attach(9);                              //Define the attached pin for servo motor 2
-
-  m1.write(0);                               //Set initial position of servo motor 1 to 0 degrees
-  m2.write(120);                             //Set initial position of servo motor 2 to 120 degrees
-
-  // Setup code goes here (if any)
-}
-
-void loop() {
-  // Add your code here for controlling the servo motors
-}
-
-void servoForward() {
-  for (pos = 0; pos <= 120; pos += 1) {
-    m1.write(pos);                          //Set servo motor 1 position
-    m2.write(120 - pos);                    //Set servo motor 2 position (opposite direction)
-    delay(15);                              //Delay for smooth movement
+    if (distance1 > 6)
+    {
+      m1.write(pos);
+      m2.write(120 - pos);
+    }
   }
 }
 
-void servoBackward() {
-  for (pos = 120; pos >= 0; pos -= 1) {
-    m1.write(pos);                          //Set servo motor 1 position
-    m2.write(120 - pos);                    //Set servo motor 2 position (opposite direction)
-    delay(15);                              //Delay for smooth movement
+void servoB()
+{
+  Serial.println("Servo back is fine");
+  delay(100);
+  
+  for (pos = 120; pos >= 0; pos -= 1)
+  {
+    m1.write(pos);
+    m2.write(120 - pos);
+    delay(30);
   }
 }
-In the above code, the servoForward() function is used to move the servo motors forward, gradually increasing their position from 0 to 120 degrees. The servoBackward() function is used to move the servo motors backward, gradually decreasing their position from 120 to 0 degrees.\

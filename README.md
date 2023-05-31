@@ -90,7 +90,11 @@ Formula that set the distance of robot goes from one plant to next one
 ```bash
 distance= duration*0.034/2;
 ```
+Hers the details explanation of the code.
 
+[code explanation.docx](https://github.com/digiworld01/Smart_Irrigation_Robot/files/11608104/code.explanation.docx)
+
+```
 Make sure everything is situated before letting it loose on your plants. You will need to attach a hose to the pump which will deliver water to your plants.
 If you haven't plugged in the pump go ahead and do so. Finally connect the arduino to your chosen power source. I'm using a simple 5V charger and a USB cable.
 

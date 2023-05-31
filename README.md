@@ -157,4 +157,3 @@ This user manual contain a detailed guide about the project with help user to se
 
 [user manual.docx](https://github.com/digiworld01/smart-irrigation-robot/files/10879383/user.manual.docx)
 
-[code explanation.docx](https://github.com/digiworld01/Smart_Irrigation_Robot/files/11608143/code.explanation.docx)

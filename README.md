@@ -6,13 +6,20 @@ This project is all about the automatic irrigation system, This robot will start
 
 ## context
 
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+  1. Introduction
+2. Circuit diagram
+3. Setup yours
+  * code
+  * tools
+  * material
+4. Guidelines
+5. Manual
 
 
 ## circuit diagram
 The circuit diagram of the automatic plant watering system is shown in Fig. 2. The circuit comprises an Arduino UNO board, a soil moisture sensor, a servo motor, DC water pump, and an L293D (IC1) motor driver IC,ultrasonic sensor,moiture sensor, li on battery,TP4056 charging module, 100RPM geared motor,wheels.
+
+![circuit diagram](https://github.com/digiworld01/Smart_Irrigation_Robot/assets/115499393/c130e7e4-faf5-4042-918a-c43fc38b9760)
 
 ## Software Setup 
 The program is written in Arduino programming language. The code is well-commented and easy to understand. Compile the irrigation robot.ino code and upload it to the microcontroller, using Arduino IDE version 1.
@@ -136,11 +143,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## configuration
-connecting hardwarInstall my-project with npm
 
-```bash
-  npm install my-project
-  cd my-project
-```
     

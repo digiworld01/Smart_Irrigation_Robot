@@ -92,7 +92,7 @@ distance= duration*0.034/2;
 ```
 Hers the details explanation of the code.
 
-[code explanation.docx](https://github.com/digiworld01/Smart_Irrigation_Robot/files/11608104/code.explanation.docx)
+(https://github.com/digiworld01/Smart_Irrigation_Robot/files/11608104/code.explanation.docx)
 
 ```
 Make sure everything is situated before letting it loose on your plants. You will need to attach a hose to the pump which will deliver water to your plants.

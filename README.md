@@ -39,65 +39,102 @@ It brings back the servo motor to its initial position.
 ## Set up yours
 To reproduce this project, you'll need some tools, some material, and the code from this project
 ## Code
-Upload the attached sketch to your arduino. It measures the level of humidity in the soil surrounding your plants. If that level drops below a specified threshold it turns on the water pump delivering just the right amount of water while you're on vacation.
-Once the arduino is loaded with the program it's time to wire it all up. Follow the diagram and wire everything up accordingly. Do not plug the arduino in to power at this point. Make sure everything is situated before letting it loose on your plants. You will need to attach a hose to the pump which will deliver water to your plants. I used a fish air hose to do this.
-I situated a bucket of water and a shelf (for all of the electronics) close to the actual plant. The hygrometer needs to be placed into the soil and the pump needs to be submersed in water before plugging in the Arduino. If you haven't plugged in the pump go ahead and do so. Finally connect the arduino to your chosen power source. I'm using a simple 5V charger and a USB cable.
+Upload the attached sketch to your arduino. Once the arduino is loaded with the program it's time to wire it all up.
+Follow the diagram and wire everything up accordingly.
+Do not plug the arduino in to power at this point.
+
+First, you have to make to install these libraries in arduino IDE
+```bash
+  #include <AFMotor.h>
+ #include<Servo.h> 
+```
+We haave to define the triggered pin and echo pic for ultrasonic sensor 1 and ultrasonic sensor 2
+triggered pin> is used to trigger the ultrasonic sound pulses. Echo pin produces a pulse when the reflected signal is received. 
+echo pin>Echo pin is an ****Output pin****. This pin goes high for a period of time which will be equal to the time taken for the US wave to return back to the sensor
+```bash
+const int trigPin = A0;                       //Defines the trig pin of ultrasonic sensor 1st 
+const int echoPin = A1;                       //Defines the echo pin of ultrasonic sensor 1st
+const int trigPin1=A2;                        //Defines the trig pin of ultrasonic sensor 2nd 
+const int echoPin1=A3;                        //Defines the echo pin of ultrasonic sensor 2nd 
+```
+Defines the pin of moisture sensor pin and store value given by moisture sensor
+```bash
+int mpin = A4;                                
+int mout;                                     
+```
+Defines the frequency which will be given to motor 1 and motor 2
+```bash
+AF_DCMotor motor1(1, MOTOR12_1KHZ);           
+AF_DCMotor motor2(2, MOTOR12_1KHZ);           
+AF_DCMotor motor4(4, MOTOR12_1KHZ);
+```
+Starts serial communication with the arduino and PC and /Define the attached pin for servo motor 1 
+
+```bash
+void setup() {
+  Serial.begin(9600);                         
+  pinMode(trigPin, OUTPUT); 
+  pinMode(echoPin, INPUT);
+  pinMode(trigPin1, OUTPUT); 
+  pinMode(echoPin1, INPUT);
+  m1.attach(10);                             
+  m2.attach(9);                              
+```
+To set the particular speed of motor 1  and motor 2
+```bash
+ motor1.setSpeed(255);                      
+  motor2.setSpeed(255);                      
+  ```
+Formula that set the distance of robot goes from one plant to next one
+```bash
+distance= duration*0.034/2;
+```
+
+Make sure everything is situated before letting it loose on your plants. You will need to attach a hose to the pump which will deliver water to your plants.
+If you haven't plugged in the pump go ahead and do so. Finally connect the arduino to your chosen power source. I'm using a simple 5V charger and a USB cable.
 
 ## Tools
 The tools are very simple, I used for this project:
 
-Battery holders
+* Battery holders
+* mounting
+* A flat screwdriver 
+* Plastic rod
 
-mounting
-
-A flat screwdriver 
-
-Plastic rod
-
-If you have them you can also add some wire strippers, but they are not indispensable.
+If you have them you can also add some wire strippers, but they are not indispensab
 
 ## Material
-Here is a list of the products used to build the system.
-To control the system:
+**To control the system:**
 
-*Arduino UNO (2100 pkr)
+* Arduino UNO (2100 pkr)
+* Servo SG90(640)
+* L293D Sheild(500pkr)
+* 100 RPM Geared motor and wheels(880pkr)
+* Prototyping jumper wires(140pkr)
+* Wooden box
+* Plastic container
 
-Servo SG90(640)
+**For the autonomy in energy:**
 
-L293D Sheild(500pkr)
+* LI_ON Battery(280pkr)
+* Charging module(TP4056)(120pkr)
 
-100 RPM Geared motor and wheels(880pkr)
+**For the water tank:**
+* 12V DC pump(350pkr)
 
-Prototyping jumper wires(140pkr)
+**The sensors:**
 
-Wooden box
-
-Plastic container
-
-For the autonomy in energy:
-
-LI_ON Battery(280pkr)
-
-Charging module(TP4056)(120pkr)
-
-For the water tank:
-
-12V DC pump(350pkr)
-
-The sensors:
-
-Ultrasonic sensor(380pkr)
-
-Moisture sensor(180pkr)
-
+* Ultrasonic sensor(380pkr)
+* Moisture sensor(180pkr)
 
 For a total of 10k. That's not cheap! But keep in mind that it's still cheaper than a pre-built system, and with a lot more capabilities! Also, some parts are only for prototyping, and we purchased many components in groups of several pieces for other projects, you don't need 3 NodeMCU boards, nor 6 relays for this project
 
-## Power Block
+**Power Block**
  The L293D Sheild  can drive 4 DC motors and 2 stepper or Servo motors at the same time. Each channel of this module has the maximum current of 1.2A and doesn't work if the voltage is more than 25v or less than 4.5v.the supply voltage and reduces it to a constant 5V making it suitable to run the Arduino & Soil Moisture Sensor.
 
-## Moisture Sensor
+**Moisture Sensor**
 The sensor feeds an analog value to the Arduino. The threshold level of moisture is calibrated by the user depending on the type of plant used.
+
 
 ## Guidelines
 Before powering the circuit on, you need to keep in mind the following macro definitions in the code:
@@ -132,16 +169,6 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 
 
     
